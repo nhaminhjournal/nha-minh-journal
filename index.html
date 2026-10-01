@@ -1,52 +1,208 @@
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+    <!-- 01. THIẾT LẬP CƠ BẢN -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#f8f6f1">
+
+    <!-- 02. SEO CƠ BẢN -->
     <title>Nhà Mình Journal | Blog gia đình, du lịch và trải nghiệm</title>
-<meta
-    name="description"
-    content="Nhà Mình Journal ghi lại những câu chuyện gia đình, hành trình du lịch, trải nghiệm và những điều thú vị trong cuộc sống."
->
+
+    <meta
+        name="description"
+        content="Nhà Mình Journal là blog ghi lại câu chuyện gia đình, hành trình du lịch, trải nghiệm, công nghệ và những điều thú vị trong cuộc sống."
+    >
+
+    <meta name="robots" content="index, follow">
+
+    <!-- 03. ĐƯỜNG DẪN CHÍNH -->
+    <link
+        rel="canonical"
+        href="https://nhaminhjournal.github.io/nha-minh-journal/"
+    >
+
+    <!-- 04. CHIA SẺ MẠNG XÃ HỘI -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="vi_VN">
+    <meta property="og:site_name" content="Nhà Mình Journal">
+    <meta
+        property="og:title"
+        content="Nhà Mình Journal | Blog gia đình, du lịch và trải nghiệm"
+    >
+    <meta
+        property="og:description"
+        content="Ghi lại những ngày bình thường, lưu giữ những điều phi thường."
+    >
+    <meta
+        property="og:url"
+        content="https://nhaminhjournal.github.io/nha-minh-journal/"
+    >
+    <meta
+        property="og:image"
+        content="https://nhaminhjournal.github.io/nha-minh-journal/images/logo/2.jpg"
+    >
+
+    <!-- 05. CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+    <!-- =========================================
+         HEADER — LOGO NHÀ MÌNH JOURNAL
+    ========================================== -->
     <header class="site-header">
-    <a href="index.html" class="logo-link">
-        <img
-            src="images/logo/2.jpg"
-            alt="Nhà Mình Journal - Ghi lại những ngày bình thường, lưu giữ những điều phi thường"
-            class="site-logo"
-        >
-    </a>
-</header>
-<nav class="main-nav">
-    <div class="nav-inner">
-        <a href="index.html" class="active">Trang chủ</a>
-        <a href="#gia-dinh">Gia đình</a>
-        <a href="#du-lich">Du lịch</a>
-        <a href="#trai-nghiem">Trải nghiệm</a>
-        <a href="#cong-nghe">Công nghệ</a>
-        <a href="#goc-nhin">Góc nhìn</a>
-        <a href="#gioi-thieu">Giới thiệu</a>
-    </div>
-</nav>
+        <a href="index.html" class="logo-link" aria-label="Nhà Mình Journal - Trang chủ">
+            <img
+                src="images/logo/2.jpg"
+                alt="Nhà Mình Journal - Ghi lại những ngày bình thường, lưu giữ những điều phi thường"
+                class="site-logo"
+            >
+        </a>
+    </header>
+
+    <!-- =========================================
+         NAVIGATION — MENU CHÍNH
+    ========================================== -->
+    <nav class="main-nav" aria-label="Menu chính">
+        <div class="nav-inner">
+            <a href="index.html" class="active" aria-current="page">Trang chủ</a>
+            <a href="#gia-dinh">Gia đình</a>
+            <a href="#du-lich">Du lịch</a>
+            <a href="#trai-nghiem">Trải nghiệm</a>
+            <a href="#cong-nghe">Công nghệ</a>
+            <a href="#goc-nhin">Góc nhìn</a>
+            <a href="#gioi-thieu">Giới thiệu</a>
+        </div>
+    </nav>
+
     <main class="home-main">
-    <section class="home-intro">
-        <h1 class="home-title">Chào mừng bạn đến với Nhà Mình Journal!</h1>
 
-        <p class="home-description">
-            Góc nhỏ lưu giữ những câu chuyện, trải nghiệm và khoảnh khắc đáng nhớ của gia đình.
-        </p>
+        <!-- =====================================
+             01. LỜI CHÀO TRANG CHỦ
+        ====================================== -->
+        <section class="home-intro" aria-labelledby="home-title">
+            <h1 class="home-title" id="home-title">
+                Chào mừng bạn đến với Nhà Mình Journal!
+            </h1>
 
-        <p class="home-notice">
-            Website đang được xây dựng. Hẹn gặp bạn trong những bài viết đầu tiên!
-        </p>
-    </section>
-</main>
+            <p class="home-description">
+                Góc nhỏ lưu giữ những câu chuyện, trải nghiệm và khoảnh khắc
+                đáng nhớ của gia đình.
+            </p>
 
+            <p class="home-notice">
+                Ghi lại những ngày bình thường, lưu giữ những điều phi thường.
+            </p>
+        </section>
+
+        <!-- =====================================
+             02. BÀI VIẾT MỚI NHẤT
+        ====================================== -->
+        <section class="home-section" id="bai-viet-moi">
+            <div class="section-heading">
+                <p class="section-eyebrow">NHẬT KÝ NHÀ MÌNH</p>
+                <h2 class="section-title">Bài viết mới nhất</h2>
+                <p class="section-description">
+                    Những câu chuyện và khoảnh khắc được ghi lại trên hành trình
+                    của Nhà Mình.
+                </p>
+            </div>
+
+            <div class="post-placeholder">
+                <h3 class="post-placeholder__title">
+                    Những bài viết đầu tiên đang được chuẩn bị
+                </h3>
+                <p class="post-placeholder__text">
+                    Hẹn gặp bạn trong những câu chuyện sắp tới!
+                </p>
+            </div>
+        </section>
+
+        <!-- =====================================
+             03. DANH MỤC GIA ĐÌNH
+        ====================================== -->
+        <section class="home-section category-section" id="gia-dinh">
+            <p class="section-eyebrow">NHỮNG ĐIỀU THÂN THUỘC</p>
+            <h2 class="section-title">Gia đình</h2>
+            <p class="section-description">
+                Những câu chuyện đời thường, kỷ niệm và khoảnh khắc đáng nhớ
+                bên những người thân yêu.
+            </p>
+        </section>
+
+        <!-- =====================================
+             04. DANH MỤC DU LỊCH
+        ====================================== -->
+        <section class="home-section category-section" id="du-lich">
+            <p class="section-eyebrow">ĐI ĐỂ KHÁM PHÁ</p>
+            <h2 class="section-title">Du lịch</h2>
+            <p class="section-description">
+                Ghi lại những vùng đất đã đi qua, những hành trình và trải nghiệm
+                đáng nhớ.
+            </p>
+        </section>
+
+        <!-- =====================================
+             05. DANH MỤC TRẢI NGHIỆM
+        ====================================== -->
+        <section class="home-section category-section" id="trai-nghiem">
+            <p class="section-eyebrow">HỌC TỪ CUỘC SỐNG</p>
+            <h2 class="section-title">Trải nghiệm</h2>
+            <p class="section-description">
+                Những điều mới mẻ, bài học và câu chuyện nhỏ góp nhặt mỗi ngày.
+            </p>
+        </section>
+
+        <!-- =====================================
+             06. DANH MỤC CÔNG NGHỆ
+        ====================================== -->
+        <section class="home-section category-section" id="cong-nghe">
+            <p class="section-eyebrow">CÔNG CỤ CỦA THỜI ĐẠI</p>
+            <h2 class="section-title">Công nghệ</h2>
+            <p class="section-description">
+                Chia sẻ những ứng dụng, thiết bị và kiến thức công nghệ hữu ích
+                trong cuộc sống.
+            </p>
+        </section>
+
+        <!-- =====================================
+             07. DANH MỤC GÓC NHÌN
+        ====================================== -->
+        <section class="home-section category-section" id="goc-nhin">
+            <p class="section-eyebrow">SUY NGẪM VÀ CHIA SẺ</p>
+            <h2 class="section-title">Góc nhìn</h2>
+            <p class="section-description">
+                Những suy nghĩ, quan sát và câu chuyện được nhìn từ góc nhìn
+                của Nhà Mình.
+            </p>
+        </section>
+
+        <!-- =====================================
+             08. GIỚI THIỆU BLOG
+        ====================================== -->
+        <section class="home-section about-section" id="gioi-thieu">
+            <p class="section-eyebrow">VỀ NHÀ MÌNH JOURNAL</p>
+            <h2 class="section-title">Một góc nhỏ để lưu giữ những điều đáng nhớ</h2>
+            <p class="section-description">
+                Nhà Mình Journal là nơi ghi lại những câu chuyện gia đình,
+                hành trình khám phá, trải nghiệm và những điều thú vị trong
+                cuộc sống thường ngày.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- =========================================
+         FOOTER — CHÂN TRANG
+    ========================================== -->
     <footer class="site-footer">
-    <p class="footer-text">© 2026 Nhà Mình Journal. All rights reserved.</p>
-</footer>
+        <p class="footer-text">
+            © 2026 Nhà Mình Journal. All rights reserved.
+        </p>
+    </footer>
+
 </body>
 </html>
