@@ -102,7 +102,7 @@ footer {
 
 .logo-link {
     display: block;
-    width: min(100%, 520px);
+    width: min(100%, 400px);
     line-height: 0;
 }
 
@@ -115,10 +115,10 @@ footer {
 
 @media (max-width: 600px) {
     .site-header {
-        padding: 24px 16px;
+        padding: 20px 16px;
     }
 
     .logo-link {
-        width: min(100%, 420px);
+        width: min(100%, 340px);
     }
 }
