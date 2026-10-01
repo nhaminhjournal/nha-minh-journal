@@ -658,3 +658,105 @@ button:focus-visible {
     font-size: 18px;
   }
 }
+/* =========================================
+   10. ẢNH TRONG BÀI VIẾT HÀNH TRÌNH DÂU TÂY
+========================================= */
+
+.journey-photo-placeholder {
+  margin: 42px 0;
+  text-align: center;
+}
+
+.journey-photo-box {
+  min-height: 300px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: #eeeae1;
+  border: 1px solid #e3dccf;
+  border-radius: 4px;
+  color: #77756f;
+}
+
+.journey-photo-box span {
+  display: block;
+  margin-bottom: 10px;
+
+  color: #a58a5b;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.journey-photo-box small {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.journey-photo-placeholder figcaption {
+  max-width: 650px;
+  margin: 14px auto 0;
+
+  color: #77756f;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* Ảnh hiển thị sau khi thay khung giữ chỗ */
+.journey-photo-placeholder img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 650px;
+  object-fit: contain;
+  margin: 0 auto;
+
+  border-radius: 4px;
+}
+
+/* Hiển thị phù hợp trên điện thoại */
+@media (max-width: 768px) {
+  .journey-photo-placeholder {
+    margin: 30px 0;
+  }
+
+  .journey-photo-box {
+    min-height: 220px;
+    padding: 20px;
+  }
+
+  .journey-photo-box small {
+    font-size: 16px;
+  }
+
+  .journey-photo-placeholder figcaption {
+    font-size: 12px;
+  }
+}
+/* =========================================
+   11. ĐIỀU CHỈNH FONT CHỮ BÀI VIẾT
+========================================= */
+
+.article-body {
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: normal;
+  word-spacing: normal;
+  font-kerning: normal;
+}
+
+.article-body p,
+.article-body li {
+  letter-spacing: normal;
+  word-spacing: normal;
+}
+
+.article-body h2 {
+  letter-spacing: normal;
+  word-spacing: normal;
+}
