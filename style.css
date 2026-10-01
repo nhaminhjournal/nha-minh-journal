@@ -5,10 +5,11 @@
 
 
 /* --------------------------------------------------
-   01. BIẾN GIAO DIỆN — màu sắc, độ rộng, bóng đổ
+   01. DESIGN TOKENS — màu sắc, kích thước, hiệu ứng
 -------------------------------------------------- */
 
 :root {
+    /* Màu sắc */
     --color-ivory: #f8f6f1;
     --color-white: #ffffff;
     --color-charcoal: #292a29;
@@ -17,19 +18,23 @@
     --color-champagne-light: #e8d8b8;
     --color-border: #e8e3d9;
 
+    /* Font chữ */
     --font-body: Georgia, "Times New Roman", serif;
     --font-ui: Arial, Helvetica, sans-serif;
 
+    /* Chiều rộng */
     --content-width: 1120px;
     --reading-width: 900px;
+    --logo-width: 400px;
 
+    /* Hiệu ứng */
     --shadow-soft: 0 12px 35px rgba(41, 42, 41, 0.05);
     --radius-small: 4px;
 }
 
 
 /* --------------------------------------------------
-   02. RESET & THIẾT LẬP CHUNG
+   02. RESET & GLOBAL — thiết lập chung toàn website
 -------------------------------------------------- */
 
 * {
@@ -50,7 +55,9 @@ body {
 }
 
 img {
+    display: block;
     max-width: 100%;
+    height: auto;
 }
 
 a {
@@ -70,41 +77,49 @@ button:focus-visible {
 
 
 /* --------------------------------------------------
-   03. HEADER — logo đầu trang
+   03. SITE HEADER — khu vực logo đầu trang
 -------------------------------------------------- */
 
 .site-header {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    width: 100%;
     padding: 28px 20px;
+
     background: var(--color-ivory);
     border-bottom: 1px solid var(--color-border);
 }
 
+/* Liên kết bao quanh logo */
 .logo-link {
     display: block;
-    width: min(100%, 400px);
+    width: min(100%, var(--logo-width));
     line-height: 0;
     text-decoration: none;
 }
 
+/* Ảnh logo ngang */
 .site-logo {
     display: block;
     width: 100%;
+    max-width: 100%;
     height: auto;
     object-fit: contain;
 }
 
 
 /* --------------------------------------------------
-   04. NAVIGATION — thanh menu điều hướng
+   04. MAIN NAVIGATION — thanh menu điều hướng
 -------------------------------------------------- */
 
 .main-nav {
     position: relative;
     z-index: 5;
+
     width: 100%;
+
     background: var(--color-ivory);
     border-bottom: 1px solid var(--color-border);
 }
@@ -120,6 +135,7 @@ button:focus-visible {
     padding: 0 24px;
 }
 
+/* Từng mục menu */
 .nav-inner a {
     display: inline-block;
     padding: 15px 0;
@@ -133,11 +149,13 @@ button:focus-visible {
     white-space: nowrap;
 
     border-bottom: 2px solid transparent;
+
     transition:
         color 0.2s ease,
         border-color 0.2s ease;
 }
 
+/* Trạng thái hover và trang đang chọn */
 .nav-inner a:hover,
 .nav-inner a.active {
     color: var(--color-champagne);
@@ -146,7 +164,7 @@ button:focus-visible {
 
 
 /* --------------------------------------------------
-   05. TRANG CHỦ — khung nội dung chính
+   05. HOME PAGE — nội dung trang chủ
 -------------------------------------------------- */
 
 .home-main {
@@ -160,13 +178,16 @@ button:focus-visible {
     box-shadow: var(--shadow-soft);
 }
 
+/* Khu vực giới thiệu */
 .home-intro {
-    max-width: 720px;
+    max-width: 100%;
     margin: 0 auto;
 }
 
+/* Tiêu đề chính — H1 */
 .home-title {
     margin: 0 0 22px;
+
     color: var(--color-charcoal);
     font-size: clamp(28px, 4vw, 38px);
     font-weight: 500;
@@ -174,12 +195,15 @@ button:focus-visible {
     letter-spacing: -0.5px;
 }
 
+/* Đoạn mô tả */
 .home-description {
     margin: 0 0 18px;
+
     color: #5f5d58;
     font-size: 17px;
 }
 
+/* Thông báo website */
 .home-notice {
     margin: 28px 0 0;
     padding: 18px 22px;
@@ -192,14 +216,16 @@ button:focus-visible {
 
 
 /* --------------------------------------------------
-   06. FOOTER — chân trang
+   06. SITE FOOTER — chân trang
 -------------------------------------------------- */
 
 .site-footer {
     padding: 28px 20px;
+
     color: var(--color-gray);
     background: var(--color-ivory);
     border-top: 1px solid var(--color-border);
+
     text-align: center;
     font-family: var(--font-ui);
     font-size: 13px;
@@ -211,10 +237,12 @@ button:focus-visible {
 
 
 /* --------------------------------------------------
-   07. RESPONSIVE — máy tính bảng và điện thoại
+   07. RESPONSIVE — máy tính bảng
 -------------------------------------------------- */
 
 @media (max-width: 768px) {
+
+    /* Header */
     .site-header {
         padding: 22px 16px;
     }
@@ -223,11 +251,14 @@ button:focus-visible {
         width: min(100%, 340px);
     }
 
+    /* Menu cuộn ngang trên màn hình nhỏ */
     .nav-inner {
         justify-content: flex-start;
         gap: 24px;
+
         overflow-x: auto;
         padding: 0 18px;
+
         scrollbar-width: thin;
     }
 
@@ -236,13 +267,21 @@ button:focus-visible {
         font-size: 13px;
     }
 
+    /* Nội dung trang chủ */
     .home-main {
         margin: 38px auto;
         padding: 40px 32px;
     }
 }
 
+
+/* --------------------------------------------------
+   08. RESPONSIVE — điện thoại
+-------------------------------------------------- */
+
 @media (max-width: 480px) {
+
+    /* Header và logo */
     .site-header {
         padding: 18px 14px;
     }
@@ -251,6 +290,7 @@ button:focus-visible {
         width: min(100%, 300px);
     }
 
+    /* Nội dung trang chủ */
     .home-main {
         width: calc(100% - 24px);
         margin: 26px auto;
@@ -270,27 +310,8 @@ button:focus-visible {
         font-size: 14px;
     }
 
+    /* Footer */
     .site-footer {
         padding: 24px 16px;
-    }
-}
-/* ========================================
-   HEADER - LOGO
-======================================== */
-
-.site-header__logo {
-    display: block;
-    width: min(100%, 560px);
-    height: auto;
-    max-height: 180px;
-    object-fit: contain;
-    margin: 0 auto;
-}
-
-/* Responsive - điện thoại và màn hình nhỏ */
-@media (max-width: 768px) {
-    .site-header__logo {
-        width: 92%;
-        max-height: 130px;
     }
 }
