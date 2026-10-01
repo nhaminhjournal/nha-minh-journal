@@ -873,10 +873,14 @@ button:focus-visible {
   }
 }
 /* ẢNH ĐẠI DIỆN BÀI VIẾT TRANG CHỦ */
+/* ẢNH ĐẠI DIỆN BÀI VIẾT - HIỂN THỊ TOÀN BỘ ẢNH */
 .post-card__image {
   display: block;
   width: 100%;
-  height: 210px;
-  object-fit: cover;
+  height: auto;
+  max-height: 300px;
+  object-fit: contain;
+  object-position: center;
   border-radius: 4px;
+  background: #f8f6f1;
 }
