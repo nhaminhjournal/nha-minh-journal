@@ -1,109 +1,92 @@
-/* ==============================
+/* ==================================================
    NHÀ MÌNH JOURNAL
-   Giao diện nền tảng
-================================ */
+   CSS nền tảng — chia theo khu vực để dễ bảo trì
+================================================== */
+
+
+/* --------------------------------------------------
+   01. BIẾN GIAO DIỆN — màu sắc, độ rộng, bóng đổ
+-------------------------------------------------- */
 
 :root {
-    --ivory: #f8f6f1;
-    --white: #ffffff;
-    --charcoal: #292a29;
-    --gray: #77756f;
-    --champagne: #b69a68;
-    --border: #e8e3d9;
+    --color-ivory: #f8f6f1;
+    --color-white: #ffffff;
+    --color-charcoal: #292a29;
+    --color-gray: #77756f;
+    --color-champagne: #b69a68;
+    --color-champagne-light: #e8d8b8;
+    --color-border: #e8e3d9;
+
+    --font-body: Georgia, "Times New Roman", serif;
+    --font-ui: Arial, Helvetica, sans-serif;
+
+    --content-width: 1120px;
+    --reading-width: 900px;
+
+    --shadow-soft: 0 12px 35px rgba(41, 42, 41, 0.05);
+    --radius-small: 4px;
 }
+
+
+/* --------------------------------------------------
+   02. RESET & THIẾT LẬP CHUNG
+-------------------------------------------------- */
 
 * {
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
-    background: var(--ivory);
-    color: var(--charcoal);
-    font-family: Georgia, "Times New Roman", serif;
-    line-height: 1.7;
+    background: var(--color-ivory);
+    color: var(--color-charcoal);
+    font-family: var(--font-body);
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
 }
 
-header {
-    padding: 72px 24px 64px;
-    text-align: center;
-    background: var(--white);
-    border-bottom: 1px solid var(--border);
+img {
+    max-width: 100%;
 }
 
-header h1 {
-    margin: 0;
-    font-size: clamp(30px, 5vw, 52px);
-    font-weight: 500;
-    letter-spacing: 5px;
+a {
+    color: inherit;
 }
 
-header p {
-    margin: 18px 0 0;
-    color: var(--gray);
-    font-size: 16px;
-    letter-spacing: 1px;
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--color-champagne);
+    outline-offset: 4px;
 }
 
-main {
-    width: min(100% - 40px, 900px);
-    margin: 70px auto;
-    padding: 56px;
-    background: var(--white);
-    border: 1px solid var(--border);
+::selection {
+    color: var(--color-charcoal);
+    background: var(--color-champagne-light);
 }
 
-main h2 {
-    margin-top: 0;
-    font-size: 30px;
-    font-weight: 500;
-}
 
-main p {
-    color: #5f5d58;
-    font-size: 17px;
-}
+/* --------------------------------------------------
+   03. HEADER — logo đầu trang
+-------------------------------------------------- */
 
-footer {
-    padding: 28px 20px;
-    text-align: center;
-    color: var(--gray);
-    border-top: 1px solid var(--border);
-    font-size: 14px;
-}
-
-@media (max-width: 600px) {
-    header {
-        padding: 52px 18px;
-    }
-
-    header h1 {
-        letter-spacing: 2px;
-    }
-
-    main {
-        width: calc(100% - 28px);
-        margin: 32px auto;
-        padding: 28px 22px;
-    }
-
-    main h2 {
-        font-size: 25px;
-    }
-}
 .site-header {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 36px 20px;
-    background: var(--ivory);
-    border-bottom: 1px solid var(--border);
+    padding: 28px 20px;
+    background: var(--color-ivory);
+    border-bottom: 1px solid var(--color-border);
 }
 
 .logo-link {
     display: block;
     width: min(100%, 400px);
     line-height: 0;
+    text-decoration: none;
 }
 
 .site-logo {
@@ -113,59 +96,181 @@ footer {
     object-fit: contain;
 }
 
-@media (max-width: 600px) {
+
+/* --------------------------------------------------
+   04. NAVIGATION — thanh menu điều hướng
+-------------------------------------------------- */
+
+.main-nav {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    background: var(--color-ivory);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.nav-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+
+    width: min(100%, var(--content-width));
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.nav-inner a {
+    display: inline-block;
+    padding: 15px 0;
+
+    color: var(--color-charcoal);
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+    white-space: nowrap;
+
+    border-bottom: 2px solid transparent;
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.nav-inner a:hover,
+.nav-inner a.active {
+    color: var(--color-champagne);
+    border-bottom-color: var(--color-champagne);
+}
+
+
+/* --------------------------------------------------
+   05. TRANG CHỦ — khung nội dung chính
+-------------------------------------------------- */
+
+.home-main {
+    width: min(calc(100% - 40px), var(--reading-width));
+    margin: 64px auto;
+    padding: 58px 56px;
+
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-small);
+    box-shadow: var(--shadow-soft);
+}
+
+.home-intro {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.home-title {
+    margin: 0 0 22px;
+    color: var(--color-charcoal);
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 500;
+    line-height: 1.35;
+    letter-spacing: -0.5px;
+}
+
+.home-description {
+    margin: 0 0 18px;
+    color: #5f5d58;
+    font-size: 17px;
+}
+
+.home-notice {
+    margin: 28px 0 0;
+    padding: 18px 22px;
+
+    color: var(--color-gray);
+    background: var(--color-ivory);
+    border-left: 3px solid var(--color-champagne);
+    font-size: 15px;
+}
+
+
+/* --------------------------------------------------
+   06. FOOTER — chân trang
+-------------------------------------------------- */
+
+.site-footer {
+    padding: 28px 20px;
+    color: var(--color-gray);
+    background: var(--color-ivory);
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+    font-family: var(--font-ui);
+    font-size: 13px;
+}
+
+.footer-text {
+    margin: 0;
+}
+
+
+/* --------------------------------------------------
+   07. RESPONSIVE — máy tính bảng và điện thoại
+-------------------------------------------------- */
+
+@media (max-width: 768px) {
     .site-header {
-        padding: 20px 16px;
+        padding: 22px 16px;
     }
 
     .logo-link {
         width: min(100%, 340px);
     }
-}
-.main-nav {
-    width: 100%;
-    background: var(--ivory);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-}
 
-.nav-inner {
-    max-width: 1120px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 32px;
-}
-
-.nav-inner a {
-    display: inline-block;
-    padding: 18px 0;
-    color: var(--charcoal);
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    white-space: nowrap;
-    transition: color 0.2s ease;
-}
-
-.nav-inner a:hover,
-.nav-inner a.active {
-    color: var(--champagne);
-}
-
-@media (max-width: 768px) {
     .nav-inner {
         justify-content: flex-start;
         gap: 24px;
         overflow-x: auto;
-        padding: 0 16px;
+        padding: 0 18px;
         scrollbar-width: thin;
     }
 
     .nav-inner a {
-        padding: 15px 0;
+        padding: 14px 0;
         font-size: 13px;
+    }
+
+    .home-main {
+        margin: 38px auto;
+        padding: 40px 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-header {
+        padding: 18px 14px;
+    }
+
+    .logo-link {
+        width: min(100%, 300px);
+    }
+
+    .home-main {
+        width: calc(100% - 24px);
+        margin: 26px auto;
+        padding: 30px 22px;
+    }
+
+    .home-title {
+        font-size: 27px;
+    }
+
+    .home-description {
+        font-size: 16px;
+    }
+
+    .home-notice {
+        padding: 15px 17px;
+        font-size: 14px;
+    }
+
+    .site-footer {
+        padding: 24px 16px;
     }
 }
