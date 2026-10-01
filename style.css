@@ -274,3 +274,23 @@ button:focus-visible {
         padding: 24px 16px;
     }
 }
+/* ========================================
+   HEADER - LOGO
+======================================== */
+
+.site-header__logo {
+    display: block;
+    width: min(100%, 560px);
+    height: auto;
+    max-height: 180px;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+/* Responsive - điện thoại và màn hình nhỏ */
+@media (max-width: 768px) {
+    .site-header__logo {
+        width: 92%;
+        max-height: 130px;
+    }
+}
