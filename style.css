@@ -884,3 +884,61 @@ button:focus-visible {
   border-radius: 4px;
   background: #f8f6f1;
 }
+/* =====================================
+   THƯ VIỆN ẢNH DÙNG CHUNG CHO BÀI VIẾT
+   ===================================== */
+
+.article-gallery {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 16px;
+
+    width: 100%;
+    margin: 24px 0;
+    padding: 4px 2px 14px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Từng ảnh trong thư viện */
+.article-gallery img {
+    display: block;
+
+    flex: 0 0 260px;
+    width: 260px;
+    height: 260px;
+
+    margin: 0;
+    max-height: none;
+
+    object-fit: contain;
+    object-position: center;
+
+    background: #f8f6f1;
+    border-radius: 6px;
+
+    scroll-snap-align: start;
+}
+
+/* Chú thích ảnh */
+.article-gallery-caption {
+    margin-top: 8px;
+    color: #77756f;
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Điện thoại: ảnh rộng hơn, vuốt ngang để xem */
+@media (max-width: 600px) {
+    .article-gallery img {
+        flex-basis: 78%;
+        width: 78%;
+        height: 260px;
+    }
+}
