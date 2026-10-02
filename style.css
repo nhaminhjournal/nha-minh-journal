@@ -942,3 +942,62 @@ button:focus-visible {
         height: 260px;
     }
 }
+/* =========================================
+   THƯ VIỆN ẢNH DÙNG CHUNG CHO CÁC BÀI VIẾT
+   Hỗ trợ cả journey-photo-gallery và article-gallery
+   ========================================= */
+
+.article-gallery,
+.journey-photo-gallery {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: flex-start;
+    gap: 16px;
+
+    width: 100%;
+    max-width: 100%;
+    margin: 20px 0;
+    padding: 4px 2px 14px;
+
+    box-sizing: border-box;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Ảnh trong thư viện */
+.article-gallery img,
+.journey-photo-gallery img {
+    display: block !important;
+
+    flex: 0 0 260px !important;
+    width: 260px !important;
+    min-width: 260px !important;
+    max-width: 260px !important;
+
+    height: 260px !important;
+    max-height: none !important;
+    margin: 0 !important;
+
+    object-fit: contain;
+    object-position: center;
+
+    background: #f8f6f1;
+    border-radius: 6px;
+
+    scroll-snap-align: start;
+}
+
+/* Trên điện thoại: ảnh rộng hơn, vuốt ngang để xem */
+@media (max-width: 600px) {
+    .article-gallery img,
+    .journey-photo-gallery img {
+        flex-basis: 78vw !important;
+        width: 78vw !important;
+        min-width: 78vw !important;
+        max-width: 78vw !important;
+    }
+}
